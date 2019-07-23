@@ -109,7 +109,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M1</version>
                 <configuration>
-                    <excludes> <!-- GUI tests are excluded because they are very fragile-->
+                  <argLine>-XX:MaxPermSize=1024m</argLine>
+                    <excludes>
                         <exclude>**/TestInGUI.java</exclude>
                     </excludes>
                     <systemProperties>
@@ -131,7 +132,7 @@
                         </property>
                     </systemProperties>
                 </configuration>
-            </plugin>
+              </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
